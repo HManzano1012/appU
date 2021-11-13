@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>AppU - Registro</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url()?>assets/img/letra-u.png" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -29,8 +29,7 @@
                         <p class="signup-link register">¿Ya tienes cuenta? <a href="<?php echo base_url() ?>">Inicia sesion</a></p>
                         <?php if (isset($info)) {
                             if ($info['code'] != 0) { ?>
-                                <div class="alert alert-primary mb-4" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+                                <div class="alert alert-warning mb-4" role="alert">                                    
                                     <?php echo $info['message']; ?>
                                 </div>
                         <?php

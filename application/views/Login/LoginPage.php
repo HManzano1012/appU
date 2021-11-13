@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>AppU - Iniciar Sesion</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url()?>assets/img/letra-u.png" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -28,6 +28,14 @@
 
                         <h1 class="">Iniciar Sesion</h1>
                         <p class="">Ingresa con tu cuenta.</p>
+                        <?php if (isset($info)) {
+                            if ($info['code'] != 0) { ?>
+                                <div class="alert alert-warning mb-4" role="alert">                                  
+                                    <?php echo $info['message']; ?>
+                                </div>
+                        <?php
+                            }
+                        } ?>
 
                         <form class="text-left" method="POST" action="<?php echo base_url("LoginController/validarUsuario") ?>">
                             <div class="form">
@@ -38,7 +46,7 @@
                                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                         <circle cx="12" cy="7" r="4"></circle>
                                     </svg>
-                                    <input id="username" name="email" type="text" class="form-control" placeholder="e.g John_Doe">
+                                    <input id="username" name="email" type="email" class="form-control" placeholder="e.g John_Doe" autocomplete="off">
                                 </div>
 
                                 <div id="password-field" class="field-wrapper input mb-2">
